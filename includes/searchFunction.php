@@ -188,20 +188,23 @@ function search_zip_shortcode($atts) {
     
     $to = 'gero.delfin@gmail.com'; // get_option('admin_email');
     $subject = 'Request Dispatch';
-    $body = "description: $description\n";
-    $body .= "company: $company\n";
-    $body .= "product: $product\n";
-    $body .= "contact: $contact\n";
-    $body .= "dispatch: $dispatch\n";
-    $body .= "phone: $phone\n";
-    $body .= "reference: $reference\n";
-    $body .= "address: $address\n";
-    $body .= "city: $city\n";
-    $body .= "state: $state\n";
-    $body .= "zip: $zip\n";
-    $body .= "dispatchDate: $dispatchDate\n";
-    $body .= "notificationEmail: $notificationEmail\n";
-    $body .= "fullDescription: $fullDescription\n";
+    $body = "<html><body>";
+    $body .= "<h1 style='color: #ff0000;'>¡Hi! New Request Dispatch.</h1>";
+    $body .= "<p><strong>description:</strong> $description</p>";
+    $body .= "<p><strong>company:</strong> $company</p>";
+    $body .= "<p><strong>product:</strong> $product</p>";
+    $body .= "<p><strong>contact:</strong> $contact</p>";
+    $body .= "<p><strong>dispatch:</strong> $dispatch</p>";
+    $body .= "<p><strong>phone:</strong> $phone</p>";
+    $body .= "<p><strong>reference:</strong> $reference</p>";
+    $body .= "<p><strong>address:</strong> $address</p>";
+    $body .= "<p><strong>city:</strong> $city</p>";
+    $body .= "<p><strong>state:</strong> $state</p>";
+    $body .= "<p><strong>zip:</strong> $zip</p>";
+    $body .= "<p><strong>dispatchDate:</strong> $dispatchDate</p>";
+    $body .= "<p><strong>notificationEmail:</strong> $notificationEmail</p>";
+    $body .= "<p><strong>fullDescription:</strong> $fullDescription</p>";
+    $body .= "<html/><body/>";
     $headers = array('Content-Type: text/html; charset=UTF-8'); 
     // Adjuntar el archivo
     if (isset($attachment) && $attachment['error'] == 0) {
