@@ -186,7 +186,7 @@ function search_zip_shortcode($atts) {
     $fullDescription = sanitize_textarea_field($_POST['fullDescription']);
     $attachment = $_FILES['attachment'];
     
-    $to = 'gero.delfin@gmail.com'; // get_option('admin_email');
+    $to = get_option('admin_email'); // 'gero.delfin@gmail.com';
     $subject = 'Request Dispatch';
     $body = "<html><body>";
     $body .= "<h1 style='color: #0d6efd;'>¡Hi! New Request Dispatch.</h1>";
