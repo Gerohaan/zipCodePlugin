@@ -185,8 +185,8 @@ function search_zip_shortcode($atts) {
     $notificationEmail = sanitize_email($_POST['notificationEmail']);
     $fullDescription = sanitize_textarea_field($_POST['fullDescription']);
     $attachment = $_FILES['attachment'];
-
-    $to = 'gero.delfin@gmail.com';
+    
+    $to = 'gero.delfin@gmail.com'; // get_option('admin_email');
     $subject = 'Request Dispatch';
     $body = "description: $description\n";
     $body .= "company: $company\n";
