@@ -85,10 +85,6 @@ function register_search_zip_shortcode() {
 }
 add_action('init', 'register_search_zip_shortcode');
 add_action('init', 'ob_start_buffer');
-add_filter( 'wp_mail_from', 'my_mail_from' );
-function my_mail_from( $email ) {
-return "itermi@itermi.webdrafts.cloud";
-}
 add_filter( 'wp_mail_from_name', 'my_mail_from_name' );
 function my_mail_from_name( $name ) {
 return "Itermi";
