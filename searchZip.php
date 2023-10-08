@@ -83,5 +83,13 @@ add_action('admin_enqueue_scripts','enqueueJsC');
 function register_search_zip_shortcode() {
     add_shortcode('searchZip', 'search_zip_shortcode');
 }
+function cambiar_remitente_correo($from_email) {
+    // Cambia el nombre del dominio en el remitente del correo
+    $from_email = str_replace('@midominio.com', '@tunuevodominio.com', $from_email);
+
+    // Devuelve el nuevo remitente modificado
+    return $from_email;
+}
+add_filter('wp_mail_from', 'cambiar_remitente_correo');
 add_action('init', 'register_search_zip_shortcode');
 add_action('init', 'ob_start_buffer');
