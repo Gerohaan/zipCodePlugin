@@ -217,9 +217,9 @@ function search_zip_shortcode($atts) {
         if (move_uploaded_file($_FILES['attachment']['tmp_name'], $target_path)) {
             $attachments = array($target_path);
             // Agregar el archivo adjunto al correo
-            add_filter('wp_mail_content_type', 'set_html_content_type');
+            //add_filter('wp_mail_content_type', 'set_html_content_type');
             $sent = wp_mail($to, $subject, $body, '', $attachments);
-            remove_filter('wp_mail_content_type', 'set_html_content_type');
+            //remove_filter('wp_mail_content_type', 'set_html_content_type');
         }else{
             '<div class="col-6 alert alert-danger mt-2" role="alert">
                 Error moving file.
