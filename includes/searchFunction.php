@@ -202,6 +202,7 @@ function search_zip_shortcode($atts) {
     $body .= "dispatchDate: $dispatchDate\n";
     $body .= "notificationEmail: $notificationEmail\n";
     $body .= "fullDescription: $fullDescription\n";
+    $headers = array('Content-Type: text/html; charset=UTF-8'); 
     // Adjuntar el archivo
     if (isset($attachment) && $attachment['error'] == 0) {
        /*  $file_path = $attachment['tmp_name'];
@@ -215,11 +216,7 @@ function search_zip_shortcode($atts) {
         $nombre_archivo = uniqid() . '_' . $_FILES['attachment']['name'];
         $target_path = $target_dir . '/' . $nombre_archivo;
         if (move_uploaded_file($_FILES['attachment']['tmp_name'], $target_path)) {
-            $attachments = array($target_path);
-            // Agregar el archivo adjunto al correo
-            //add_filter('wp_mail_content_type', 'set_html_content_type');
-            $sent = wp_mail($to, $subject, $body, '', $attachments);
-            //remove_filter('wp_mail_content_type', 'set_html_content_type');
+            $sent = wp_mail($to, $subject, $body, $headers, array($target_path));
         }else{
             '<div class="col-6 alert alert-danger mt-2" role="alert">
                 Error moving file.
