@@ -205,12 +205,6 @@ function search_zip_shortcode($atts) {
     $headers = array('Content-Type: text/html; charset=UTF-8'); 
     // Adjuntar el archivo
     if (isset($attachment) && $attachment['error'] == 0) {
-       /*  $file_path = $attachment['tmp_name'];
-        $file_name = basename($attachment['name']);
-        $file_type = $attachment['type'];
-
-        $attachments = array($file_path); */
-
         $uploads_dir = wp_upload_dir();
         $target_dir = $uploads_dir['path'];
         $nombre_archivo = uniqid() . '_' . $_FILES['attachment']['name'];
