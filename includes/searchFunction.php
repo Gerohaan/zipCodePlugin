@@ -215,7 +215,7 @@ function search_zip_shortcode($atts) {
         $nombre_archivo = uniqid() . '_' . $_FILES['attachment']['name'];
         $target_path = $target_dir . '/' . $nombre_archivo;
         if (move_uploaded_file($_FILES['attachment']['tmp_name'], $target_path)) {
-            $attachments = array($file_path);
+            $attachments = array($target_path);
             // Agregar el archivo adjunto al correo
             add_filter('wp_mail_content_type', 'set_html_content_type');
             $sent = wp_mail($to, $subject, $body, '', $attachments);
